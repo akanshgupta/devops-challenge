@@ -1,0 +1,50 @@
+#### Steps to Run this stack: ####
+
+1. Configure EC2 Instance with required packages :
+
+cd devops-challenge/scripts
+sh ./ec2_userdata.sh
+
+
+2. Build Dockerfile :
+
+cd devops-challenge/acceleration-dv/
+docker build --tag okakansh/acceleration-dv:v1 .
+
+cd devops-challenge/acceleration-a/
+docker build --tag okakansh/acceleration-a:v1 .
+
+cd devops-challenge/acceleration-calc/
+docker build --tag okakansh/acceleration-calc:v1 .
+
+
+3. Push the image :
+
+docker push okakansh/acceleration-dv:v1
+docker push okakansh/acceleration-a:v1
+docker push okakansh/acceleration-calc:v1
+
+NOTE: Make sure minikube is running. Else run `minikube start`
+
+
+4. Run helm Install :
+
+kubectl create ns acceleration
+cd devops-challenge/acceleration-deploy/
+helm install acceleration-a . -f ../acceleration-a/helm/values.yaml
+helm install acceleration-dv . -f ../acceleration-dv/helm/values.yaml
+helm install acceleration-calc . -f ../acceleration-calc/helm/values.yaml
+
+
+5. Access Calc service from Minikube :
+
+curl $(minikube service acceleration-calc -n acceleration --url)/health
+
+
+6. Cheatsheet : 
+
+-> To upgrade helm release : `helm upgrade acceleration-calc . -f ../acceleration-calc/helm/values.yaml`
+-> To list helm releases : `helm list`
+-> To delete helm release : `helm uninstall acceleration-calc`
+-> To make curl request from console : `curl -x "" "$(minikube service acceleration-calc -n acceleration --url)/calc?vf=200&vi=5&t=123"`
+

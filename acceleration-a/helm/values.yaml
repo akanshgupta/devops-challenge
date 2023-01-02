@@ -1,0 +1,12 @@
+app:
+  name: acceleration-a
+  namespace: acceleration
+  replicaCount: 2
+  container:
+    image: okakansh/acceleration-a:v1
+    port: 3002
+  service:
+    type: ClusterIP
+    port: 3002
+    targetPort: 3002
+
