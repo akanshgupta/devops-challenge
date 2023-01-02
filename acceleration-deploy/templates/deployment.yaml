@@ -15,9 +15,28 @@ spec:
       labels:
         app: {{ .Values.app.name }}
     spec:
+      restartPolicy: Always
       containers:
         - name: {{ .Values.app.name }}
           image: {{ .Values.app.container.image }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.app.container.port }}
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.app.container.port }}
+            initialDelaySeconds: 6
+            periodSeconds: 5
+          startupProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.app.container.port }}
+            failureThreshold: 5
+            periodSeconds: 10
           ports:
             - containerPort: {{ .Values.app.container.port }}
           resources:
