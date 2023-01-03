@@ -3,11 +3,11 @@ app:
   namespace: acceleration
   replicaCount: 2
   container:
-    image: okakansh/acceleration-calc:v2
+    image: okakansh/acceleration-calc:v4
     port: 3000
     env:
-      DV_URL: "acceleration-dv:3001/dv"
-      A_URL: "acceleration-a:3002/a"
+      DV_URL: "http://acceleration-dv:3001/dv"
+      A_URL: "http://acceleration-a:3002/a"
   service:
     type: NodePort
     port: 3000
