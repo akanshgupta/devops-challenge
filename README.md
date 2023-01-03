@@ -40,8 +40,4 @@ curl http://127.0.0.1:3000/calc?vf=200&vi=5&t=123
 - Run `yarn dev` to run a service in dev environment
 - Run `yarn start` to run a service in production
 
-# Instructions
-- The challenge is on!
-- **Send us an email with a link to repository when you finish the assesment.**
-- Please complete your working solution within 5 days of receiving this challenge.
 
