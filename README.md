@@ -44,6 +44,6 @@ curl http://127.0.0.1:3000/calc?vf=200&vi=5&t=123
 - Read [HowTo.txt](https://github.com/akanshgupta/devops-learning/blob/main/HowTo.txt) to deploy it.
 
 # My Final Results
-![Output healthCheck](https://github.com/akanshgupta/devops-learning/blob/main/images/output-health.png)
+![Output healthCheck](https://github.com/akanshgupta/devops-learning/blob/main/images/output-health.png) <br /> <br />
 ![Output response](https://github.com/akanshgupta/devops-learning/blob/main/images/output-calc.png)
 
