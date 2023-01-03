@@ -1,5 +1,5 @@
 # Infrastructure Engineer (DevOps) Challenge
-![JOIN acceleration](https://github.com/join-com/devops-challenge/raw/master/illustration.png)
+![Acceleration Health](https://github.com/akanshgupta/devops-learning/blob/main/images/illustration.png)
 
 ## The context
 This challenge addresses a web application with a microservice architecture to calculate the [acceleration](http://www.softschools.com/formulas/physics/acceleration_formula/1/) of an object.
@@ -40,4 +40,10 @@ curl http://127.0.0.1:3000/calc?vf=200&vi=5&t=123
 - Run `yarn dev` to run a service in dev environment
 - Run `yarn start` to run a service in production
 
+# Solution
+- Read [HowTo.txt](https://github.com/akanshgupta/devops-learning/blob/main/HowTo.txt) to deploy it.
+
+# My Final Results
+![Output healthCheck](https://github.com/akanshgupta/devops-learning/blob/main/images/output-health.png)
+![Output response](https://github.com/akanshgupta/devops-learning/blob/main/images/output-calc.png)
 
